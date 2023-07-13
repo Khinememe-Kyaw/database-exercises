@@ -9,3 +9,6 @@ USE codeup_test_db;
     SELECT * FROM albums where artist = 'Whitney Houston';
     DELETE FROM albums where artist = 'Whitney Houston';
     SELECT * FROM albums;
+
+
+
