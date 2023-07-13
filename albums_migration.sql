@@ -7,17 +7,17 @@ CREATE TABLE quotes (
                         PRIMARY KEY (id)
 );
 DROP TABLE quotes;
-CREATE TABLE albums(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    artist VARCHAR(100),
-    name VARCHAR(100),
-    release_date INT,
-    sales FLOAT,
-    genre VARCHAR(255),
-    PRIMARY KEY (id)
+CREATE TABLE albums (
+                        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                        artist VARCHAR(255),
+                        name VARCHAR(255),
+                        release_date INT,
+                        sales FLOAT,
+                        genre VARCHAR(255)
 );
 SHOW CREATE TABLE albums;
 SHOW tables;
 DESCRIBE albums;
-
+DROP TABLE albums;
+SHOW tables;
 
