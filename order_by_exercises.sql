@@ -24,6 +24,25 @@ FROM employees
 WHERE last_name LIKE '%e%'
 ORDER BY emp_no ASC;
 
+# put first name in order
+SELECT *
+FROM employees
+WHERE first_name IN('Irena', 'Vidya', 'Maya')
+ORDER BY first_name DESC;
+
+# put put in order first name and then last name
+SELECT *
+FROM employees
+WHERE first_name IN('Irena', 'Vidya', 'Maya')
+ORDER BY first_name DESC, last_name DESC;
+
+
+# put in order last name and then first name
+SELECT *
+FROM employees
+WHERE first_name IN('Irena', 'Vidya', 'Maya')
+ORDER BY last_name DESC, first_name DESC;
+
 # put in order of descending employee number and last name that has 'e'
 SELECT *
 FROM employees
