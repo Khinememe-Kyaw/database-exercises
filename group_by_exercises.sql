@@ -8,13 +8,17 @@ FROM titles;
 SELECT DISTINCT last_name
 FROM employees
 WHERE last_name LIKE 'e%e'
-GROUP BY last_name;
+GROUP BY last_name
+ORDER BY last_name;
 
 # Update your previous query to now find unique combinations of first and
 # last name where the last name starts and ends with 'E'. You should get 846 rows.
 SELECT DISTINCT first_name, last_name
 FROM employees
-WHERE last_name LIKE 'e%e';
+WHERE last_name LIKE 'e%e'
+GROUP BY last_name, first_name
+ORDER BY last_name;
+
 
 # Find the unique last names with a 'q' but not 'qu'. Your results should be:
 SELECT DISTINCT last_name
@@ -36,3 +40,11 @@ SELECT CONCAT(count(*), '   ',gender)
 FROM employees
 WHERE first_name IN('Irena', 'Vidya', 'Maya')
 GROUP BY gender;
+
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, d.dept_name
+FROM employees as e
+         JOIN dept_emp as de
+              ON de.emp_no = e.emp_no
+         JOIN departments as d
+              ON d.dept_no = de.dept_no
+WHERE de.to_date = '9999-01-01' AND e.emp_no = 10001;

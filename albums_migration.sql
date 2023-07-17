@@ -14,6 +14,7 @@ CREATE TABLE albums (
                         release_date INT,
                         sales FLOAT,
                         genre VARCHAR(255)
+                        UNIQUE (artist, name)
 );
 SHOW CREATE TABLE albums;
 SHOW tables;
